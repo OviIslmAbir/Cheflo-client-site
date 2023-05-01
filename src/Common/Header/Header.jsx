@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, NavLink } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 const Header = () => {
     return (
         <nav className="container navbar navbar-expand-lg bg-body-tertiary">
@@ -12,20 +12,49 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                           <a className="nav-link active me-3" aria-current="page" href="#">Home</a>
+                           <NavLink
+                                to="/"
+                                className={({ isActive }) =>
+                                    isActive ? "text-danger nav-link active me-3" : "nav-link active me-3"
+                                }
+                                >
+                                Home
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                           <a className="nav-link me-3" href="#">About</a>
+                           <NavLink
+                                to="/about"
+                                className={({ isActive }) =>
+                                    isActive ? "text-danger nav-link me-3" : "nav-link active me-3"
+                                }
+                                >
+                                About
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                           <a className="nav-link  me-3" href="#">Contact</a>
+                            <NavLink
+                                to="/contact"
+                                className={({ isActive }) =>
+                                    isActive ? "text-danger nav-link me-3" : "nav-link active me-3"
+                                }
+                                >
+                                Contact
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                           <a className="nav-link  me-3" href="#">Blogs</a>
+                        <NavLink
+                                to="/blog"
+                                className={({ isActive }) =>
+                                    isActive ? "text-danger nav-link me-3" : "nav-link active me-3"
+                                }
+                                >
+                                Blogs
+                            </NavLink>
                         </li>
                     </ul>
                     <div>
                         <button className='btn btn-warning'>Login</button>
+                        <FaUserCircle className='ms-2' style={{width:"38px", height:"38px", cursor:"pointer"}}/>
                     </div>
                 </div>
             </div>

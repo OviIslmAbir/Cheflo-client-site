@@ -1,12 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { FaEnvelope, FaKey, FaGoogle, FaGithub } from 'react-icons/fa';
 import { FiAlertCircle} from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './SignIn.css'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 const SignIn = () => {
     const {login, loginAndRegisterWithGoogle, loginAndRegisterWithGithub} = useContext(AuthContext)
     const [error, setError] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/'
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target
@@ -19,6 +22,7 @@ const SignIn = () => {
                 setError()
                 console.log(loggedUser)
                 form.reset()
+                navigate(from)
           })
           .catch(error => {
                setError(error.message)

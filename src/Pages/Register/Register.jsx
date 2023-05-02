@@ -29,11 +29,11 @@ const Register = () => {
           .then(result => {
                 const createdUser = result.user
                 setError()
+                userProfile(name, photo)
+                .then(() => {})
+                .catch(() => {})
                 console.log(createdUser)
                 form.reset()
-                userProfile(name, photo)
-                    .then(() => {})
-                    .catch(() => {})
           })
           .catch(error => {
                setError(error.message)

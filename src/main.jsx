@@ -12,6 +12,8 @@ import Blogs from './Pages/Blogs/Blogs';
 import Register from './Pages/Register/Register';
 import SignIn from './Pages/SignIn/SignIn';
 import AuthProvider from './AuthProvider/AuthProvider';
+import Recipes from './Common/Recipes/Recipes';
+import PrivateRoute from './routes/PrivateRoute';
 ;
 
 
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/recipes',
+        element: <PrivateRoute><Recipes></Recipes></PrivateRoute>
       },
     ]
   },

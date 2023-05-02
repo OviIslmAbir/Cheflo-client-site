@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const Chef = (props) => {
     const {name, chefImg, experience, numRecipes, likes } = props.chef
     return (
@@ -20,9 +21,11 @@ const Chef = (props) => {
                             <span><FaTwitter className='text-info'/> {likes.twitter}</span>
                         </div>
                         <div className='text-center'>
-                            <button className='mt-3 btn btn-warning'>
-                                View Recipes
-                            </button>
+                            <Link to='/recipes'>
+                                <button className='mt-3 btn btn-warning'>
+                                    View Recipes
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

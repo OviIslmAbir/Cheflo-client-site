@@ -14,6 +14,7 @@ import SignIn from './Pages/SignIn/SignIn';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Recipes from './Common/Recipes/Recipes';
 import PrivateRoute from './routes/PrivateRoute';
+import Error from './Pages/Error/Error';
 ;
 
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',

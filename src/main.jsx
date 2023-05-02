@@ -8,6 +8,11 @@ import "./index.css";
 import Main from './Layout/Main';
 import Home from './Pages/Home/Home';
 import Blogs from './Pages/Blogs/Blogs';
+;
+import Register from './Pages/Register/Register';
+import SignIn from './Pages/SignIn/SignIn';
+;
+
 
 const router = createBrowserRouter([
   {
@@ -21,7 +26,15 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blogs></Blogs>
-      }
+      },
+      {
+        path: '/login',
+        element: <SignIn></SignIn>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
     ]
   },
 ]);

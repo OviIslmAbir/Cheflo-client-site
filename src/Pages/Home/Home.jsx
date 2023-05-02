@@ -12,7 +12,7 @@ const Home = () => {
                     <button className='btn btn-warning'>Recipes</button>
                 </div>
                 <div className="col-lg-5">
-                    <img style={{width:"500px"}} src="img/banner-chef.jpg" alt="" />
+                    <img className='img-fluid' style={{width:"550px"}} src="img/banner-chef.jpg" alt="" />
                 </div>
             </div>
             <div>

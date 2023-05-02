@@ -53,7 +53,7 @@ const Header = () => {
                         </li>
                     </ul>
                     <div>
-                        <button className='btn btn-warning'>Login</button>
+                        <Link to='/login'><button className='btn btn-warning'>Login</button></Link>
                         <FaUserCircle className='ms-2' style={{width:"38px", height:"38px", cursor:"pointer"}}/>
                     </div>
                 </div>

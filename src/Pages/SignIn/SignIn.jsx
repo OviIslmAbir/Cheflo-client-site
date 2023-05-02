@@ -59,7 +59,7 @@ const SignIn = () => {
                     <input type="password" name='pass' className="form-control" placeholder="Enter Your Password" aria-label="Enter Your Password" aria-describedby="addon-wrapping" required/>
                 </div>
                 <input className='btn btn-warning w-100' type="submit" value="Login" />
-                <p className='text-center my-2'>Don't Have An Account ? <Link style={{textDecoration:"none"}} className='text-danger' to='/register'>Register</Link></p>
+                <p className='text-center my-2'>Don't have an account ? <Link style={{textDecoration:"none"}} className='text-danger' to='/register'>Register</Link></p>
                 <p className='mt-3 text-danger'>{error && <FiAlertCircle/>} {error}</p>
             </form>
             <div className='text-center mt-3'>

@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext)
+    const handleLogOut = () =>{
+        logOut()
+            .then(() => {})
+            .catch(() => {})
+    }
     return (
         <nav className="container navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -52,9 +59,17 @@ const Header = () => {
                             </NavLink>
                         </li>
                     </ul>
+                    
                     <div>
-                        <Link to='/login'><button className='btn btn-warning'>Login</button></Link>
-                        <FaUserCircle className='ms-2' style={{width:"38px", height:"38px", cursor:"pointer"}}/>
+                        {
+                            user ? <button onClick={handleLogOut} className='btn btn-warning'>Log Out</button> :
+                            <Link to='/login'><button className='btn btn-warning'>Login</button></Link>
+                        }
+                        {
+                            user ? <img className='ms-2' title={user.displayName} style={{width:"38px", height:"38px", cursor:"pointer" , borderRadius:"50%"}} src={user.photoURL} alt="" /> : 
+                            <FaUserCircle className='ms-2' style={{width:"38px", height:"38px", cursor:"pointer"}}/>
+                        }
+                        
                     </div>
                 </div>
             </div>

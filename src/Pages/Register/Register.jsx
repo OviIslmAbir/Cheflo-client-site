@@ -3,9 +3,10 @@ import { FaEnvelope, FaKey, FaUser, FaPhotoVideo, FaGoogle, FaGithub,} from 'rea
 import { FiAlertCircle} from 'react-icons/fi';
 import './Register.css'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const {createUser, loginAndRegisterWithGoogle, loginAndRegisterWithGithub} = useContext(AuthContext)
+    const {createUser, loginAndRegisterWithGoogle, loginAndRegisterWithGithub, userProfile} = useContext(AuthContext)
     const [error, setError] = useState('')
 
     const handleRegister = event => {
@@ -30,6 +31,9 @@ const Register = () => {
                 setError()
                 console.log(createdUser)
                 form.reset()
+                userProfile(name, photo)
+                    .then(() => {})
+                    .catch(() => {})
           })
           .catch(error => {
                setError(error.message)
@@ -58,6 +62,7 @@ const Register = () => {
             })
     }
 
+
     return (
         <div className='container my-5'>
         <form onSubmit={handleRegister} style={{backgroundColor:"cornsilk", width:"450px"}} className='shadow-lg p-2 p-lg-4 mx-auto'>
@@ -79,6 +84,7 @@ const Register = () => {
                 <input type="password" name='pass' className="form-control" placeholder="Enter Your Password" aria-label="Enter Your Password" aria-describedby="addon-wrapping" required/>
             </div>
             <input className='btn btn-warning w-100' type="submit" value="Register" />
+            <p className='text-center my-2'>You have already an account ? <Link style={{textDecoration:"none"}} className='text-danger' to='/login'>Login</Link></p>
 
             <p className='mt-3 text-danger'>{error && <FiAlertCircle/>} {error}</p>
         </form>

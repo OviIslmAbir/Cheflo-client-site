@@ -1,6 +1,7 @@
 import React from 'react';
 import Chefs from '../../Common/Chefs/Chefs';
 import Contact from '../../Common/Contact/Contact';
+import LazyLoad from 'react-lazy-load';
 const Home = () => {
     return (
         <div className='container'>
@@ -11,7 +12,9 @@ const Home = () => {
                     <button className='btn btn-warning'>Recipes</button>
                 </div>
                 <div className="col-lg-5">
-                    <img className='img-fluid' style={{width:"550px"}} src="img/banner-chef.jpg" alt="" />
+                   <LazyLoad height={'550px'}>
+                       <img className='img-fluid'src="img/banner-chef.jpg" alt="" />
+                   </LazyLoad>
                 </div>
             </div>
             <div>

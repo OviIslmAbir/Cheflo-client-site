@@ -34,31 +34,31 @@ const Contact = () => {
                    </div>
                 </div>
                 <div className="col-12 col-lg-6 mt-5 mt-lg-0">
-                    <form action="">
+                    <form>
                       <div className="input-group mb-4">
                         <span className="input-group-text"><FaUser/></span>
                         <div className="form-floating">
                           <input type="text" className="form-control" id="floatingInputGroup1" placeholder="Your name"/>
-                          <label for="floatingInputGroup1">Your name</label>
+                          <label>Your name</label>
                         </div>
                       </div>
                       <div className="input-group mb-4">
                         <span className="input-group-text"><FaEnvelope/></span>
                         <div className="form-floating">
                           <input type="email" className="form-control" id="floatingInputGroup1" placeholder="Your email"/>
-                          <label for="floatingInputGroup1">Your email</label>
+                          <label>Your email</label>
                         </div>
                       </div>
                       <div className="input-group mb-4">
                         <span className="input-group-text"><FaBook/></span>
                         <div className="form-floating">
                           <input type="text" className="form-control" id="floatingInputGroup1" placeholder="Subject"/>
-                          <label for="floatingInputGroup1">Subject</label>
+                          <label>Subject</label>
                         </div>
                       </div>
                       <div className="form-floating">
                         <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: '100px'}}></textarea>
-                        <label for="floatingTextarea2">Comments</label>
+                        <label>Comments</label>
                       </div>                   
                     </form>
                 </div>

@@ -18,9 +18,9 @@ const Chefs = () => {
                {
                     loader ? 
                     ( 
-                        <div class="text-center">
-                            <div class="spinner-border" style={{width:"150px", height:"150px"}} role="status">
-                                <span class="visually-hidden">Loading...</span>
+                        <div className="text-center">
+                            <div className="spinner-border" style={{width:"150px", height:"150px"}} role="status">
+                                <span className="visually-hidden">Loading...</span>
                             </div>
                         </div>
                     ):(

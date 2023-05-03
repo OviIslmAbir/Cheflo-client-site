@@ -1,7 +1,6 @@
 import React from 'react';
 import Chefs from '../../Common/Chefs/Chefs';
-
-
+import Contact from '../../Common/Contact/Contact';
 const Home = () => {
     return (
         <div className='container'>
@@ -17,6 +16,9 @@ const Home = () => {
             </div>
             <div>
                 <Chefs></Chefs>
+            </div>
+            <div>
+                <Contact></Contact>
             </div>
         </div>
     );

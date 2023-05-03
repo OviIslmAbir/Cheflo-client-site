@@ -15,7 +15,8 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import Recipes from './Common/Recipes/Recipes';
 import PrivateRoute from './routes/PrivateRoute';
 import Error from './Pages/Error/Error';
-;
+import Contact from './Common/Contact/Contact';
+
 
 
 const router = createBrowserRouter([
@@ -34,11 +35,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <SignIn></SignIn>
+        element: <SignIn></SignIn>,
       },
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       },
       {
         path: '/recipes/:id',

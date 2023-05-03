@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Rating } from 'primereact/rating';
 import { AiFillHeart } from 'react-icons/ai';
+import toast, { Toaster } from 'react-hot-toast';
 const Recipe = (props) => {
+
     const {name, img, ingredients, cooking_method, rating} = props.recipe
     const [value, setValue] = useState(rating);
+    const [favorite, setFavorite] = useState(false) 
+    const handleFav = () =>{
+        setFavorite(true)
+        toast.success('Add your favorite recipe')
+    }
     return (
         <div className='mt-4'>
             <div className='col'>
@@ -29,8 +36,13 @@ const Recipe = (props) => {
                                     </ol>
                             <div>
                                 <div className='d-flex justify-content-between align-items-center'>
-                                    <p><span>Rating: {rating}</span> <Rating style={{cursor:"pointer"}} className='d-flex gap-2' value={value} onChange={(e) => setValue(e.value)} cancel={false} /></p>
-                                    <AiFillHeart style={{width:"40px", height:"40px", cursor:"pointer"}}/>
+                                    <p><span>Rating: {rating}</span> <Rating  style={{cursor:"pointer"}} className='d-flex gap-2 text-warning' value={value} onChange={(e) => setValue(e.value)} cancel={false} /></p>
+                                    <button style={{border:"none"}} className='btn btn-white' onClick={handleFav} disabled={favorite} >
+                                       <AiFillHeart className='text-danger' style={{width:"40px", height:"40px", cursor:"pointer"}}/>
+                                    </button>
+                                      
+                                    <Toaster  position="top-center"
+                                    reverseOrder={false}/>
                                 </div>
                             </div>
                         </div>

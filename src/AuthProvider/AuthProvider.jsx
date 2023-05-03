@@ -3,6 +3,7 @@ export const AuthContext = createContext(null)
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
+
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
 const githubProvider = new GithubAuthProvider()
@@ -46,6 +47,7 @@ const AuthProvider = ({children}) => {
            unSubscribe()
          }
       }, [])
+
    
 
 
@@ -57,7 +59,7 @@ const AuthProvider = ({children}) => {
         loginAndRegisterWithGoogle,
         loginAndRegisterWithGithub,
         logOut,
-        userProfile
+        userProfile,
 
     }
     return (

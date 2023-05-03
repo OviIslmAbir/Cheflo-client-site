@@ -2,7 +2,7 @@ import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const Chef = (props) => {
-    const {name, chefImg, experience, numRecipes, likes } = props.chef
+    const {id, name, chefImg, experience, numRecipes, likes } = props.chef
     return (
         <div>
             <div className="col">
@@ -21,7 +21,7 @@ const Chef = (props) => {
                             <span><FaTwitter className='text-info'/> {likes.twitter}</span>
                         </div>
                         <div className='text-center'>
-                            <Link to='/recipes'>
+                            <Link to={`/recipes/${id}`}>
                                 <button className='mt-3 btn btn-warning'>
                                     View Recipes
                                 </button>
